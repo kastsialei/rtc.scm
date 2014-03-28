@@ -4,8 +4,6 @@
 
 **Features** : all features like in Eclipse client with restrictions and simplified functionality
 
-**Risks** : nobody will be interested in plugin
-
 **Benefits** : 
  - idea licensing for OS (?)
  - deep knowledge in *RTC* work

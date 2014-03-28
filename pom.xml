@@ -6,7 +6,9 @@
   <groupId>rtc.scm</groupId>
   <artifactId>rtc</artifactId>
   <version>1.0-SNAPSHOT</version>
+
   <packaging>pom</packaging>
+
   <modules>
     <module>rtc-library</module>
   </modules>

@@ -1,0 +1,51 @@
+<idea-plugin version="2">
+  <id>org.kastsialei</id>
+  <name>RTC SCM</name>
+  <version>1.0</version>
+  <vendor email="e.kosteley@gmail.com" url="kastsialei.github.com">Yahor Kastsialei</vendor>
+  <category>VCS Integration</category>
+
+  <depends>com.intellij.modules.vcs</depends>
+  <description><![CDATA[
+      SCM plugin
+      ]]></description>
+
+  <change-notes><![CDATA[
+      ]]>
+  </change-notes>
+
+  <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="107.105"/>
+
+  <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <vcs name="rtcscm" vcsClass="net.rtc.scm.idea.ScmVcs" displayName="RTC SCM-1" administrativeAreaName=".jazz5"/>
+    <!--<checkoutProvider implementation="git4idea.checkout.GitCheckoutProvider"/>-->
+    <!--<vcsPopupProvider implementation="git4idea.actions.GitQuickListContentProvider"/>-->
+    <!--<vcsCheckinHandlerFactory implementation="git4idea.checkin.GitCheckinHandlerFactory"/>-->
+    <!--<checkinHandlerFactory implementation="git4idea.checkin.UnresolvedMergeCheckFactory"/>-->
+
+    <!--<vcsChangesViewRefresher implementation="git4idea.changes.GitChangesViewRefresher" />-->
+    <applicationService serviceInterface="net.rtc.scm.idea.ScmApplicationSettings"
+                        serviceImplementation="net.rtc.scm.idea.ScmApplicationSettings"/>
+    <projectService serviceInterface="net.rtc.scm.idea.ScmProjectSettings"
+                        serviceImplementation="net.rtc.scm.idea.ScmProjectSettings"/>
+  </extensions>
+</idea-plugin>

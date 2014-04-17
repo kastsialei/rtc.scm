@@ -5,6 +5,7 @@ import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.VcsKey;
+import com.intellij.openapi.vcs.versionBrowser.CommittedChangeList;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,18 +14,14 @@ import com.intellij.openapi.vcs.VcsKey;
  * Time: 22:49
  * To change this template use File | Settings | File Templates.
  */
-public class ScmVcs extends AbstractVcs {
+public class ScmVcs extends AbstractVcs<CommittedChangeList> {
 
 
   private static final Logger LOG = Logger.getInstance(ScmVcs.class);
-//  public static final String NAME = "rtcscm";
+  public static final String NAME = "rtcscm";
 
-  public ScmVcs(Project project, String name) {
-    super(project, name);
-  }
-
-  public ScmVcs(Project project, String name, VcsKey key) {
-    super(project, name, key);
+  public ScmVcs(Project project) {
+    super(project, NAME);
   }
 
   @Override

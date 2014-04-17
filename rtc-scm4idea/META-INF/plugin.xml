@@ -1,4 +1,4 @@
-<idea-plugin version="2">
+<idea-plugin version="2" use-idea-classloader="true">
   <id>org.kastsialei</id>
   <name>RTC SCM</name>
   <version>1.0</version>
@@ -15,7 +15,7 @@
   </change-notes>
 
   <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->
-  <idea-version since-build="107.105"/>
+  <idea-version since-build="129.1359"/>
 
   <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
        on how to target different products -->
@@ -33,16 +33,19 @@
 
   <actions>
     <!-- Add your actions here -->
+    <action id="rtc.001" class="net.rtc.scm.idea.ScmStart" text="ScmStart" popup="true"/>
   </actions>
 
-  <extensions defaultExtensionNs="com.intellij">
-    <vcs name="rtcscm" vcsClass="net.rtc.scm.idea.ScmVcs" displayName="RTC SCM-1" administrativeAreaName=".jazz5"/>
-    <!--<checkoutProvider implementation="git4idea.checkout.GitCheckoutProvider"/>-->
-    <!--<vcsPopupProvider implementation="git4idea.actions.GitQuickListContentProvider"/>-->
-    <!--<vcsCheckinHandlerFactory implementation="git4idea.checkin.GitCheckinHandlerFactory"/>-->
-    <!--<checkinHandlerFactory implementation="git4idea.checkin.UnresolvedMergeCheckFactory"/>-->
 
-    <!--<vcsChangesViewRefresher implementation="git4idea.changes.GitChangesViewRefresher" />-->
+  <extensions defaultExtensionNs="com.intellij">
+    <errorHandler implementation="com.intellij.diagnostic.ITNReporter"/>
+    <vcs id="rtcscm" name="rtcscm" vcsClass="net.rtc.scm.idea.ScmVcs" displayName="rtcscm" administrativeAreaName=".jazz5"/>
+    <!--<checkoutProvider implementation="net.rtc.scm.idea.ScmCheckoutProvider"/>-->
+    <!--&lt;!&ndash;<vcsPopupProvider implementation="git4idea.actions.GitQuickListContentProvider"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;<vcsCheckinHandlerFactory implementation="git4idea.checkin.GitCheckinHandlerFactory"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;<checkinHandlerFactory implementation="git4idea.checkin.UnresolvedMergeCheckFactory"/>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<vcsChangesViewRefresher implementation="git4idea.changes.GitChangesViewRefresher" />&ndash;&gt;-->
     <applicationService serviceInterface="net.rtc.scm.idea.ScmApplicationSettings"
                         serviceImplementation="net.rtc.scm.idea.ScmApplicationSettings"/>
     <projectService serviceInterface="net.rtc.scm.idea.ScmProjectSettings"

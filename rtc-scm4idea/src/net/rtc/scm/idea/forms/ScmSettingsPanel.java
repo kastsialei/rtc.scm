@@ -12,6 +12,7 @@ import javax.swing.*;
  * To change this template use File | Settings | File Templates.
  */
 public class ScmSettingsPanel {
+  public static final String SCM_EXEC = "/usr/bin/scm";
   private JTextField pathToExecutable;
   private JPanel panel;
   private ScmApplicationSettings instance;
@@ -24,6 +25,7 @@ public class ScmSettingsPanel {
   public void init(ScmApplicationSettings instance) {
     //To change body of created methods use File | Settings | File Templates.
     this.instance = instance;
+    pathToExecutable.setText(instance.getState().getPathToExecutable());
   }
 
   public void apply() {
@@ -31,6 +33,6 @@ public class ScmSettingsPanel {
   }
 
   public void reset() {
-    instance.getState().setPathToExecutable("");
+    instance.getState().setPathToExecutable(SCM_EXEC);
   }
 }

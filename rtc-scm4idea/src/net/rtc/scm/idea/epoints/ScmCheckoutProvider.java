@@ -1,4 +1,4 @@
-package net.rtc.scm.idea;
+package net.rtc.scm.idea.epoints;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.CheckoutProvider;
@@ -16,6 +16,7 @@ public class ScmCheckoutProvider implements CheckoutProvider {
   @Override
   public void doCheckout(@NotNull Project project, @Nullable Listener listener) {
     System.out.println("doCheckout");
+
   }
 
   @Override

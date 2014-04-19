@@ -8,6 +8,8 @@ import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Set;
+
 /**
  * Created with IntelliJ IDEA.
  * User: gosha
@@ -38,5 +40,32 @@ public class ScmProjectSettings implements PersistentStateComponent<ScmProjectSe
   }
 
   public class State {
+    String repoUrl;
+    Set<String> components;
+    String login;
+
+    public String getRepoUrl() {
+      return repoUrl;
+    }
+
+    public void setRepoUrl(String repoUrl) {
+      this.repoUrl = repoUrl;
+    }
+
+    public Set<String> getComponents() {
+      return components;
+    }
+
+    public void setComponents(Set<String> components) {
+      this.components = components;
+    }
+
+    public String getLogin() {
+      return login;
+    }
+
+    public void setLogin(String login) {
+      this.login = login;
+    }
   }
 }

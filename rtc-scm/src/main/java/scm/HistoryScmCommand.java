@@ -15,6 +15,6 @@ public class HistoryScmCommand implements ScmCommand {
   @Override
   public void execute(CommandHandler handler) {
 //   CommandLine
-
+//    BaseOSProcessHandler baseOSProcessHandler =
   }
 }

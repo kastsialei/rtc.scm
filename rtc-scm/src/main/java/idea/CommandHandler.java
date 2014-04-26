@@ -1,11 +1,11 @@
-package net.rtc.scm.idea.auth;
+package idea;
 
 /**
  * Created with IntelliJ IDEA.
  * User: gosha
- * Date: 19.04.14
- * Time: 22:26
+ * Date: 26.04.14
+ * Time: 23:52
  * To change this template use File | Settings | File Templates.
  */
-public interface AuthHandle {
+public interface CommandHandler {
 }

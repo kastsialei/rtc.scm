@@ -11,5 +11,6 @@
   <modules>
     <module>rtc-library</module>
     <module>rtc-examples</module>
+    <module>rtc-scm</module>
   </modules>
 </project>

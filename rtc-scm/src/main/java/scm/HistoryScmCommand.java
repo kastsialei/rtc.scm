@@ -1,7 +1,5 @@
 package scm;
 
-import idea.CommandHandler;
-
 /**
  * Created with IntelliJ IDEA.
  * User: gosha
@@ -13,8 +11,12 @@ public class HistoryScmCommand implements ScmCommand {
 
 
   @Override
-  public void execute(CommandHandler handler) {
+  public void execute(CommandContext context) {
 //   CommandLine
 //    BaseOSProcessHandler baseOSProcessHandler =
+  }
+
+  private void buildCommandLineArguments() {
+
   }
 }

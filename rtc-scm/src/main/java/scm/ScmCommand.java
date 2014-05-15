@@ -10,6 +10,7 @@ import idea.CommandHandler;
  * To change this template use File | Settings | File Templates.
  */
 public interface ScmCommand {
-  void execute(CommandContext context);
+  ScmCommandResult execute(CommandContext context);
 
+  void addArg(ScmArg arg);
 }

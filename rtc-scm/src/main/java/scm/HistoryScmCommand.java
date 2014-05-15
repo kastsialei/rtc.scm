@@ -7,16 +7,14 @@ package scm;
  * Time: 23:55
  * To change this template use File | Settings | File Templates.
  */
-public class HistoryScmCommand implements ScmCommand {
+public class HistoryScmCommand extends BaseScmCommand {
 
 
   @Override
-  public void execute(CommandContext context) {
+  public ScmCommandResult execute(CommandContext context) {
+    return null;
 //   CommandLine
 //    BaseOSProcessHandler baseOSProcessHandler =
   }
 
-  private void buildCommandLineArguments() {
-
-  }
 }

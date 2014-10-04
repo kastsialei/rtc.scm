@@ -10,6 +10,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Key;
 import org.jetbrains.annotations.Nullable;
 import scm.ScmCommand;
+import scm.VersionScmCommand;
 
 /**
  * Created with IntelliJ IDEA.
@@ -32,6 +33,12 @@ public class ScmCommandLineExecutor extends AbstractExecutor {
 
   }
 
+  public ScmCommandLineExecutor(String caption, ScmConsole console, Project project) {
+    super(caption, console);
+    this.project = project;
+    this.command = new VersionScmCommand();
+  }
+
   @Override
   public boolean execute(final ProgressIndicator indicator) {
     displayProgress();
@@ -44,12 +51,13 @@ public class ScmCommandLineExecutor extends AbstractExecutor {
               super.notifyTextAvailable(text, outputType);
               updateProgress(indicator, text);
             }
+
           };
 
       myConsole.attachToProcess(myProcessHandler);
     }
     catch (ExecutionException e) {
-      myConsole.systemMessage(CommonBundle.message("external.startup.failed", e.getMessage()));
+      myConsole.systemMessage(ScmBundle.message("external.startup.failed", e.getMessage()));
       return false;
     }
 

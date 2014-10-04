@@ -3,7 +3,7 @@
   <name>Plugin display name here</name>
   <version>1.0</version>
   <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
-
+  <resource-bundle>rtc.scm.executor.ScmBundle</resource-bundle>
   <description><![CDATA[
       Enter short description for your plugin here.<br>
       <small>most HTML tags may be used</small>
@@ -34,10 +34,14 @@
 
   <actions>
     <!-- Add your actions here -->
+    <action id="scmrtc.exec.test" class="ScmExecTest" text="scmExecTest">
+      <add-to-group group-id="VcsGroups" anchor="first"/>
+    </action>
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
     <errorHandler implementation="com.intellij.diagnostic.ITNReporter"/>
     <!-- Add your extensions here -->
+    <projectService serviceImplementation="rtc.scm.executor.ScmRunner"/>
   </extensions>
 </idea-plugin>

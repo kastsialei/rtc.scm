@@ -14,6 +14,8 @@ import scm.ScmCommand;
 public class CommandLineUtils {
   public static GeneralCommandLine prepareGeneralCommandLine(Project project, ScmCommand command) {
     if(project == null || command == null) throw new IllegalArgumentException();
-    return null;
+    GeneralCommandLine commandLine = new GeneralCommandLine("echo");
+    commandLine.addParameter("$PATH");
+    return commandLine;
   }
 }

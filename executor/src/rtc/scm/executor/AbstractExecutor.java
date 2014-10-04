@@ -70,23 +70,23 @@ public abstract class AbstractExecutor {
   void displayProgress() {
     final ProgressIndicator indicator = ProgressManager.getInstance().getProgressIndicator();
     if (indicator != null) {
-      indicator.setText(MessageFormat.format("{0} {1}", myAction != null ? myAction : CommonBundle.message("scm.executor.running"),
+      indicator.setText(MessageFormat.format("{0} {1}", myAction != null ? myAction : ScmBundle.message("scm.executor.running"),
           ""));
     }
   }
 
   protected boolean printExitSummary() {
     if (isCancelled()) {
-      myConsole.systemMessage(CommonBundle.message("scm.executor.aborted"));
+      myConsole.systemMessage(ScmBundle.message("scm.executor.aborted"));
       return false;
     }
     else if (exitCode == 0) {
-      myConsole.systemMessage(CommonBundle.message("scm.executor.finished"));
+      myConsole.systemMessage(ScmBundle.message("scm.executor.finished"));
       return true;
     }
     else {
       myConsole
-          .systemMessage(CommonBundle.message("scm.executor.exit", exitCode));
+          .systemMessage(ScmBundle.message("scm.executor.exit", exitCode));
       return false;
     }
   }
